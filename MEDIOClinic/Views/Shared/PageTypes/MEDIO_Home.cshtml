@@ -1,0 +1,30 @@
+﻿@model Kentico.Content.Web.Mvc.Routing.IPageViewModel<CMS.DocumentEngine.Types.MEDIO.Home>
+
+@{
+    ViewBag.Title = Model.Page.DocumentName;
+}
+@addTagHelper *, Kentico.Content.Web.Mvc
+
+@section styles
+{
+    <page-builder-styles />
+}
+@section scripts
+{
+    <page-builder-scripts/>
+}
+
+<section class="teaser">
+		<div class="col-sm-offset-3 col-sm-4">
+			<p>@Model.Page.Fields.Header</p>
+		</div>
+		<div class="clearfix"></div>
+	</section>
+	<section class="content">
+		<div class="col-sm-offset-3 col-sm-5">
+			<h1>@Model.Page.Fields.TextHeading</h1>
+			<p>@Model.Page.Fields.Text</p>
+			<editable-area area-identifier="editableArea"/>
+		</div>
+		<div class="clearfix"></div>
+	</section>
